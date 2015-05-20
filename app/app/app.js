@@ -14,7 +14,7 @@ function(
 ) {
 
     // Enter your site url here
-    var baseUrl = 'http://<your local IP address>:5000/';
+    var BASE_URL = 'http://<Your IP Address>:5000/';
 
     // Initialize plugins
     var applicationPromise = ApplicationPlugin.init();
@@ -23,15 +23,15 @@ function(
 
     // Start the app at the base url
     mainWebViewPromise.then(function(mainWebView) {
-        mainWebView.navigate(baseUrl);
+        mainWebView.navigate(BASE_URL);
     });
 
-    // Use the mainWebView as the main content view for our layout
+    // Use mainWebView as the main content view for our layout
     Promise.join(layoutPromise, mainWebViewPromise, function(layout, mainWebView) {
         layout.setContentView(mainWebView.address);
     });
 
-    // Route all unhandled key presses to the mainWebView
+    // Route all unhandled key presses to mainWebView
     Promise.join(applicationPromise, mainWebViewPromise, function(application, mainWebView){
         application.setMainInputPlugin(mainWebView.address);
     });
