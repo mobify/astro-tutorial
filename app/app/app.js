@@ -18,7 +18,10 @@ function(
 ) {
 
     // Enter your site url here
-    var baseUrl = "http://<your local IP address>:5000/";
+    var BASE_URL = 'http://10.10.1.63:5000/';
+    var CART_URL = BASE_URL + 'cart/';
+    var LOGO_URL = BASE_URL + '/images/velo.png';
+    var CART_ICON_URL = BASE_URL + '/images/cart.png';
 
     // Initialize plugins
     var applicationPromise = ApplicationPlugin.init();
@@ -31,7 +34,11 @@ function(
 
     // Start the app at the base url
     mainWebViewPromise.then(function(mainWebView) {
-        mainWebView.navigate(baseUrl);
+        mainWebView.navigate(BASE_URL);
+    });
+
+    cartWebViewPromise.then(function(webView) {
+        webView.navigate(CART_URL);
     });
 
     // Use the mainWebView as the main content view for our layout
@@ -47,9 +54,9 @@ function(
     // Create a new promise for when icons have been loaded into the header bar
     var loadIconPromise = headerPromise.then(function(headerBar){
         return Promise.join(
-            headerBar.setRightIcon(baseUrl + "/images/bag.png"),
-            headerBar.setCenterIcon(baseUrl + "/images/logo.png"),
-            headerBar.setBackgroundColor("#FFFFFF")
+            headerBar.setRightIcon(CART_ICON_URL),
+            headerBar.setCenterIcon(LOGO_URL),
+            headerBar.setBackgroundColor('#FFFFFF')
         );
     });
 
@@ -66,10 +73,6 @@ function(
 
     Promise.join(drawerPromise, applicationPromise, function(drawer, application) {
         application.setMainViewPlugin(drawer.address);
-    });
-
-    cartWebViewPromise.then(function(webView) {
-        webView.navigate(baseUrl + "cart/")
     });
 
     // Add the cart web view to the right drawer
