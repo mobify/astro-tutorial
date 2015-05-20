@@ -18,7 +18,7 @@ function(
 ) {
 
     // Enter your site url here
-    var BASE_URL = 'http://10.10.1.63:5000/';
+    var BASE_URL = 'http://<Your IP Address>:5000/';
     var CART_PATH = '/cart';
     var ACCOUNT_PATH = '/account';
     var LOGO_URL = BASE_URL + '/images/velo.png';
