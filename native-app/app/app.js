@@ -46,12 +46,12 @@ function(
 
     // Use mainWebView as the main content view for our layout
     Promise.join(layoutPromise, mainWebViewPromise, function(layout, mainWebView) {
-        layout.setContentView(mainWebView.address);
+        layout.setContentView(mainWebView);
     });
 
     // Route all unhandled key presses to the mainWebView
     Promise.join(applicationPromise, mainWebViewPromise, function(application, mainWebView){
-        application.setMainInputPlugin(mainWebView.address);
+        application.setMainInputPlugin(mainWebView);
     });
 
     // Create a new promise for when icons have been loaded into the header bar
@@ -66,17 +66,17 @@ function(
 
     // Add the header bar to the top of the layout
     Promise.join(layoutPromise, headerPromise, loadIconPromise, function(layout, headerBar) {
-        layout.addTopView(headerBar.address);
+        layout.addTopView(headerBar);
         headerBar.show();
     });
 
     // Set the layout plugin as the main content view of the drawer
     Promise.join(drawerPromise, layoutPromise, function(drawer, layout) {
-        drawer.setContentView(layout.address);
+        drawer.setContentView(layout);
     });
 
     Promise.join(drawerPromise, applicationPromise, function(drawer, application) {
-        application.setMainViewPlugin(drawer.address);
+        application.setMainViewPlugin(drawer);
     });
 
     cartWebViewPromise.then(function(webView) {
@@ -155,13 +155,13 @@ function(
 
     // Add the cart web view to the right drawer
     var rightDrawerPromise = Promise.join(cartWebViewPromise, drawerPromise, function(cartWebView, drawer) {
-        var rightDrawer = drawer.initRightMenu(cartWebView.address);
+        var rightDrawer = drawer.initRightMenu(cartWebView);
         return rightDrawer;
     });
 
     // Add the account web view to the left drawer
     var leftDrawerPromise = Promise.join(accountWebViewPromise, drawerPromise, function(accountWebView, drawer) {
-        var leftDrawer = drawer.initLeftMenu(accountWebView.address);
+        var leftDrawer = drawer.initLeftMenu(accountWebView);
         return leftDrawer;
     });
 
