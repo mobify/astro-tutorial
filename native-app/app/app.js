@@ -1,7 +1,7 @@
 require([
     'astro',
     'bluebird',
-    'plugins/applicationPlugin',
+    'application',
     'plugins/webViewPlugin',
     'plugins/anchoredLayoutPlugin',
     'plugins/headerBarPlugin',
@@ -10,7 +10,7 @@ require([
 function(
      Astro,
      Promise,
-     ApplicationPlugin,
+     Application,
      WebViewPlugin,
      AnchoredLayoutPlugin,
      HeaderBarPlugin,
@@ -27,7 +27,6 @@ function(
     var BACK_ICON_URL = BASE_URL + '/images/back.png';
 
     // Initialize plugins
-    var applicationPromise = ApplicationPlugin.init();
     var mainWebViewPromise = WebViewPlugin.init();
     var layoutPromise = AnchoredLayoutPlugin.init();
     var headerPromise = HeaderBarPlugin.init();
@@ -50,8 +49,8 @@ function(
     });
 
     // Route all unhandled key presses to the mainWebView
-    Promise.join(applicationPromise, mainWebViewPromise, function(application, mainWebView){
-        application.setMainInputPlugin(mainWebView);
+    mainWebViewPromise.then(function(mainWebView) {
+        Application.setMainInputPlugin(mainWebView);
     });
 
     // Create a new promise for when icons have been loaded into the header bar
@@ -75,8 +74,8 @@ function(
         drawer.setContentView(layout);
     });
 
-    Promise.join(drawerPromise, applicationPromise, function(drawer, application) {
-        application.setMainViewPlugin(drawer);
+    drawerPromise.then(function(drawer) {
+        Application.setMainViewPlugin(drawer);
     });
 
     cartWebViewPromise.then(function(webView) {
