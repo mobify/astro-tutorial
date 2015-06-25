@@ -30,7 +30,7 @@
                 "path": ""
             },
             "desiredCapabilities": {
-                "app": "/Users/ellen/Documents/astro-sample/astro-tutorial/native-app/scaffold/build/outputs/apk/scaffold-debug-unaligned.apk",
+                "app": "/absolute/path/to/apk/scaffold-debug-unaligned.apk",
                 "platformName": "Android",
                 "platformVersion": "4.4",
                 "deviceName": "",
