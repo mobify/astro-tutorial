@@ -3,7 +3,7 @@
     "profiles": {
         "default": {
             "bundleUrl": "http://localhost:8080/adaptive.js",
-            "siteUrl": "http://10.10.1.98:5000/"
+            "siteUrl": "<Your IP Address>:5000/"
         }
     }
 
