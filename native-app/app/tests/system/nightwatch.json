@@ -30,7 +30,7 @@
                 "path": ""
             },
             "desiredCapabilities": {
-                "app": "/absolute/path/to/apk/scaffold-debug-unaligned.apk",
+                "app": "http://yourhostedapp.ca/app.ipa or /absolute/path/to/apk.apk",
                 "platformName": "Android",
                 "platformVersion": "4.4",
                 "deviceName": "",
