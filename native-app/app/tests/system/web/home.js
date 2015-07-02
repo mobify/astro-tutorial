@@ -22,8 +22,12 @@ module.exports = {
 
     'Verify webview elements': function(browser) {
         browser
+          // Get all windows inside this webview. 
           .windowHandles(function (result) {
             browser
+            // There are multiple windows within the webview.
+            // We want to switch to the one containing the main PLP page.
+            // The others are Account and Cart pages, etc. 
             .switchWindow(result.value[2])
             .waitForElementVisible(webSelectors.productList)
             .verify.elementsVisible(

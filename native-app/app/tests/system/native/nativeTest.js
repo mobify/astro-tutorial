@@ -12,6 +12,8 @@ var nativeSelectors = {
 module.exports = {
     setUp: function(browser) {
         browser
+          // you can .useXpath() or .useCss()
+          // .useCss() will only make sense in a webview context 
           .useXpath()
     },
 
