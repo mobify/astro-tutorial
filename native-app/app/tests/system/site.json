@@ -1,0 +1,10 @@
+{
+    "activeProfile": "default",
+    "profiles": {
+        "default": {
+            "bundleUrl": "http://localhost:8080/adaptive.js",
+            "siteUrl": "<Your IP Address>:5000/"
+        }
+    }
+
+}
