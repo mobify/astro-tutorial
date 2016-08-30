@@ -40,6 +40,11 @@ if ! findNode; then
 fi
 
 if ! findNode; then
+    # Force supporting Homebrew installations of npm.
+    export PATH=$PATH:/usr/local/bin
+fi
+
+if ! findNode; then
     echo "Cannot find 'npm'. Aborting. Add your npm path to \`user-env.sh\` and retry."
     exit 1
 fi
