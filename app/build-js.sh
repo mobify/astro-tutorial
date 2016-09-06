@@ -4,7 +4,7 @@ set -e
 
 MYPATH=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 ROOT=$MYPATH/..
-EXTRA_NPM_ARGS=""
+EXTRA_NPM_ARGS="--no-progress --no-spin"
 EXTRA_GRUNT_ARGS=""
 
 function findNode() {
@@ -40,18 +40,19 @@ if ! findNode; then
 fi
 
 if ! findNode; then
+    # Force supporting Homebrew installations of npm.
+    export PATH=$PATH:/usr/local/bin
+fi
+
+if ! findNode; then
     echo "Cannot find 'npm'. Aborting. Add your npm path to \`user-env.sh\` and retry."
     exit 1
 fi
 
-# Build astro-client.js
-pushd $ROOT/node_modules/astro-sdk
-npm install --no-progress --no-spin $EXTRA_NPM_ARGS
-$MYPATH/node_modules/grunt-cli/bin/grunt $EXTRA_GRUNT_ARGS build_astro_client
-cp js/build/astro-client.js $MYPATH/app-www/js
-popd
-
 # Build app.js.
+pushd $ROOT
+npm install $EXTRA_NPM_ARGS
+
 pushd $MYPATH
 $MYPATH/node_modules/grunt-cli/bin/grunt $EXTRA_GRUNT_ARGS build
 popd
