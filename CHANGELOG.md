@@ -1,4 +1,4 @@
-## To be released
+## v0.14.0
 - Include pushclient module in iOS build
 
 ## v0.13.0
