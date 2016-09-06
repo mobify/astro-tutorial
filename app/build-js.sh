@@ -1,27 +1,58 @@
-#!/bin/bash -e
+#!/bin/bash
+
+set -e
 
 MYPATH=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+ROOT=$MYPATH/..
+EXTRA_NPM_ARGS="--no-progress --no-spin"
+EXTRA_GRUNT_ARGS=""
+
+function findNode() {
+    return $(which npm 1>/dev/null 2>&1)
+}
+
+if [ "$1" == "--no-color" ]; then
+    EXTRA_NPM_ARGS="--no-color $EXTRA_NPM_ARGS"
+    EXTRA_GRUNT_ARGS="--no-color $EXTRA_GRUNT_ARGS"
+fi
 
 pushd "$MYPATH"
 
 # Force supporting Homebrew installations of npm.
 export PATH=$PATH:/usr/local/bin
 
-# Source additional configuration from `user-env.sh` in Astro's root.
-if [ -f user-env.sh ]; then
-    echo "Found user-env.sh"
-	source user-env.sh
+if ! findNode; then
+    echo "Cannot find 'npm'. Trying via nvm..."
+    # Find node with nvm
+    if [ -d "$HOME/.nvm" ]; then
+        echo " ↳  Found $HOME/.nvm  Sourcing and retrying build..."
+        . "$HOME/.nvm/nvm.sh"
+    fi
 fi
 
-if ! which npm 1>/dev/null 2>&1; then
-	echo "Cannot find 'npm'.  Please ensure 'npm' is in your PATH."
-	exit 1
+if ! findNode; then
+    echo "Cannot find 'npm'. Trying via user-env.sh..."
+    # Source additional configuration from `user-env.sh` in Astro's root.
+    if [ -f user-env.sh ]; then
+        echo " ↳  Found user-env.sh  Sourcing and retrying build..."
+        source user-env.sh
+    fi
 fi
 
-# Build astro
-pushd ../node_modules/astro-sdk
-npm install
+if ! findNode; then
+    # Force supporting Homebrew installations of npm.
+    export PATH=$PATH:/usr/local/bin
+fi
+
+if ! findNode; then
+    echo "Cannot find 'npm'. Aborting. Add your npm path to \`user-env.sh\` and retry."
+    exit 1
+fi
+
+# Build app.js.
+pushd $ROOT
+npm install $EXTRA_NPM_ARGS
+
+pushd $MYPATH
+$MYPATH/node_modules/grunt-cli/bin/grunt $EXTRA_GRUNT_ARGS build
 popd
-
-# Build app.js
-grunt build

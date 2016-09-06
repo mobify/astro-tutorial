@@ -5,13 +5,14 @@ npm-debug.log
 /app/reports
 /app/user-env.sh
 
-
-android/.gradle
-android/local.properties
+# Android Studio
+*.iml
+.gradle
+local.properties
 android/.idea/workspace.xml
 android/.idea/libraries
 android/build
-android/gradle.properties
+gradle.properties
 
 ### Xcode ###
 build/
