@@ -1,5 +1,5 @@
 ## v0.15.0
-- No changes to tutorial
+- Added assets/www/index.html to Android tutorial so it runs with latest cordova 
 
 ## v0.14.0
 - Include pushclient module in iOS build
