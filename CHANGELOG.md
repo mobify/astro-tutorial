@@ -1,4 +1,6 @@
 ## To be released
+
+## v0.16.1
 - Update to Xcode 8
 
 ## v0.15.0
