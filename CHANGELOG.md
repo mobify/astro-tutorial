@@ -1,4 +1,5 @@
-## To be released
+## v0.17.0
+- Update to Astro 0.17.0
 
 ## v0.16.1
 - Update to Xcode 8
