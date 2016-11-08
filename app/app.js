@@ -33,6 +33,7 @@ window.run = function() {
         // Use the mainNavigationView as the main content view for our layout
         Promise.join(layoutPromise, mainNavigationPromise, function(layout, mainNavigationView) {
             layout.setContentView(mainNavigationView);
+            Application.dismissLaunchImage();
         });
 
         // Set our layout as the main view of the app
