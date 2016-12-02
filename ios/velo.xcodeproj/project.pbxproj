@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0EDA55691B9257CC00AB6AF7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EDA55681B9257CC00AB6AF7 /* Images.xcassets */; };
+		5BFB5A561DD2620C00C3A22F /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BFB5A551DD2620C00C3A22F /* Launch Screen.storyboard */; };
 		87132A201B6016FF00FC74A4 /* Astro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87132A1E1B6016FF00FC74A4 /* Astro.framework */; };
 		87132A211B6016FF00FC74A4 /* Astro.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 87132A1E1B6016FF00FC74A4 /* Astro.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		87132A221B6016FF00FC74A4 /* Cordova.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87132A1F1B6016FF00FC74A4 /* Cordova.framework */; };
@@ -15,7 +16,6 @@
 		87C6A88C1B43044D001876CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C6A88B1B43044D001876CE /* AppDelegate.swift */; };
 		87C6A88E1B43044D001876CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C6A88D1B43044D001876CE /* ViewController.swift */; };
 		87C6A8911B43044D001876CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87C6A88F1B43044D001876CE /* Main.storyboard */; };
-		87C6A8961B43044D001876CE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87C6A8941B43044D001876CE /* LaunchScreen.xib */; };
 		87C6A8A21B43044D001876CE /* veloTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C6A8A11B43044D001876CE /* veloTests.swift */; };
 		87C6A8E91B430E15001876CE /* config.xml in Resources */ = {isa = PBXBuildFile; fileRef = 87C6A8D71B430E15001876CE /* config.xml */; };
 		87C6A8F61B430EDD001876CE /* www in Resources */ = {isa = PBXBuildFile; fileRef = 87C6A8F51B430EDD001876CE /* www */; };
@@ -52,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		0EDA55681B9257CC00AB6AF7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5BFB5A551DD2620C00C3A22F /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		87132A1E1B6016FF00FC74A4 /* Astro.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Astro.framework; path = "$(CONFIGURATION_BUILD_DIR)/Astro.framework"; sourceTree = "<group>"; };
 		87132A1F1B6016FF00FC74A4 /* Cordova.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cordova.framework; path = "$(CONFIGURATION_BUILD_DIR)/Cordova.framework"; sourceTree = "<group>"; };
 		87C6A8861B43044D001876CE /* velo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = velo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,7 +60,6 @@
 		87C6A88B1B43044D001876CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87C6A88D1B43044D001876CE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		87C6A8901B43044D001876CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		87C6A8951B43044D001876CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		87C6A89B1B43044D001876CE /* veloTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = veloTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		87C6A8A01B43044D001876CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87C6A8A11B43044D001876CE /* veloTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = veloTests.swift; sourceTree = "<group>"; };
@@ -120,9 +120,9 @@
 				87C6A8F71B430FA2001876CE /* app.js */,
 				87C6A88D1B43044D001876CE /* ViewController.swift */,
 				87C6A88F1B43044D001876CE /* Main.storyboard */,
-				87C6A8941B43044D001876CE /* LaunchScreen.xib */,
 				0EDA55681B9257CC00AB6AF7 /* Images.xcassets */,
 				87C6A8891B43044D001876CE /* Supporting Files */,
+				5BFB5A551DD2620C00C3A22F /* Launch Screen.storyboard */,
 			);
 			path = velo;
 			sourceTree = "<group>";
@@ -256,10 +256,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BFB5A561DD2620C00C3A22F /* Launch Screen.storyboard in Resources */,
 				96C2AD861B62B6180032A784 /* app.js in Resources */,
 				0EDA55691B9257CC00AB6AF7 /* Images.xcassets in Resources */,
 				87C6A8911B43044D001876CE /* Main.storyboard in Resources */,
-				87C6A8961B43044D001876CE /* LaunchScreen.xib in Resources */,
 				87C6A8F61B430EDD001876CE /* www in Resources */,
 				87C6A8E91B430E15001876CE /* config.xml in Resources */,
 			);
@@ -326,14 +326,6 @@
 				87C6A8901B43044D001876CE /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		87C6A8941B43044D001876CE /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				87C6A8951B43044D001876CE /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
