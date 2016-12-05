@@ -16,7 +16,6 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
-        debug {}
     }
 }
 
@@ -29,6 +28,6 @@ preBuild.dependsOn buildJS
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:23.1.1'
-    releaseCompile project(path: ':astro', configuration: 'release')
-    debugCompile project(path: ':astro', configuration: 'debug')
+    releaseCompile project(path: ':astro', configuration: 'previewDisabledRelease')
+    debugCompile project(path: ':astro', configuration: 'previewDisabledDebug')
 }
