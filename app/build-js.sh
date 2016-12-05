@@ -4,7 +4,6 @@ set -e
 
 echo "Setting up path variables and finding node"
 MYPATH=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-EXTRA_NPM_ARGS=""
 EXTRA_GRUNT_ARGS=""
 
 function findNode() {
@@ -12,7 +11,6 @@ function findNode() {
 }
 
 if [ "$1" == "--no-color" ]; then
-    EXTRA_NPM_ARGS="--no-color $EXTRA_NPM_ARGS"
     EXTRA_GRUNT_ARGS="--no-color $EXTRA_GRUNT_ARGS"
 fi
 
