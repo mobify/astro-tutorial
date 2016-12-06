@@ -2,9 +2,8 @@
 
 set -e
 
+echo "Setting up path variables and finding node"
 MYPATH=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-ROOT=$MYPATH/..
-EXTRA_NPM_ARGS="--no-progress --no-spin"
 EXTRA_GRUNT_ARGS=""
 
 function findNode() {
@@ -12,14 +11,8 @@ function findNode() {
 }
 
 if [ "$1" == "--no-color" ]; then
-    EXTRA_NPM_ARGS="--no-color $EXTRA_NPM_ARGS"
     EXTRA_GRUNT_ARGS="--no-color $EXTRA_GRUNT_ARGS"
 fi
-
-pushd "$MYPATH"
-
-# Force supporting Homebrew installations of npm.
-export PATH=$PATH:/usr/local/bin
 
 if ! findNode; then
     echo "Cannot find 'npm'. Trying via nvm..."
@@ -39,20 +32,17 @@ if ! findNode; then
     fi
 fi
 
-if ! findNode; then
-    # Force supporting Homebrew installations of npm.
-    export PATH=$PATH:/usr/local/bin
-fi
+# Force supporting Homebrew installations of npm.
+export PATH=$PATH:/usr/local/bin
 
 if ! findNode; then
     echo "Cannot find 'npm'. Aborting. Add your npm path to \`user-env.sh\` and retry."
     exit 1
 fi
 
-# Build app.js.
-pushd $ROOT
-npm install $EXTRA_NPM_ARGS
-
+echo "Building app.js"
 pushd $MYPATH
-$MYPATH/node_modules/grunt-cli/bin/grunt $EXTRA_GRUNT_ARGS build
+    $MYPATH/node_modules/.bin/grunt $EXTRA_GRUNT_ARGS build
 popd
+
+echo "SUCCESS: build app.js"

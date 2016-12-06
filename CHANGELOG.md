@@ -1,3 +1,7 @@
+## v0.17.6
+- Dismiss launch screen when app is loaded
+- Build tutorial with preview enabled turned off
+
 ## v0.17.0
 - Update to Astro 0.17.0
 
