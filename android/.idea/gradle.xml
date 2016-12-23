@@ -10,18 +10,11 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/velo" />
-            <option value="$PROJECT_DIR$/../node_modules/astro-sdk/android" />
-            <option value="$PROJECT_DIR$/../node_modules/astro-sdk/node_modules/mobify-push-android-client/pushclient" />
+            <option value="$PROJECT_DIR$/../node_modules/mobify-progressive-app-sdk/android" />
+            <option value="$PROJECT_DIR$/../node_modules/mobify-progressive-app-sdk/node_modules/mobify-push-android-client/pushclient" />
           </set>
         </option>
-        <option name="myModules">
-          <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/velo" />
-            <option value="$PROJECT_DIR$/../node_modules/astro-sdk/android" />
-            <option value="$PROJECT_DIR$/../node_modules/astro-sdk/node_modules/mobify-push-android-client/pushclient" />
-          </set>
-        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>
