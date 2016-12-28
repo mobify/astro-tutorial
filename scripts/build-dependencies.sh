@@ -44,14 +44,6 @@ pushd $MYPATH/..
     npm install $EXTRA_NPM_ARGS
 popd
 
-echo "Adding navitron & its dependencies to the app bundle"
-cp $MYPATH/node_modules/grunt-requirejs/node_modules/requirejs/require.js $MYPATH/app-www/js/build
-cp $MYPATH/node_modules/navitron/node_modules/plugin/dist/plugin*.js $MYPATH/app-www/js/build
-cp $MYPATH/node_modules/navitron/node_modules/velocity-animate/velocity.* $MYPATH/app-www/js/build
-cp $MYPATH/node_modules/navitron/dist/navitron*.js $MYPATH/app-www/js/build
-cp $MYPATH/node_modules/jquery/dist/jquery.min.js $MYPATH/app-www/js/build
-cp $MYPATH/node_modules/bluebird/js/browser/bluebird*.js $MYPATH/app-www/js/build
-
 pushd $MYPATH/node_modules/mobify-progressive-app-sdk
     echo "Installing dependencies for mobify-progressive-app-sdk"
     npm install --no-progress --no-spin $EXTRA_NPM_ARGS
