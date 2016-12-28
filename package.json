@@ -3,18 +3,27 @@
   "version": "0.0.1",
   "author": "Mobify",
   "dependencies": {
-    "mobify-progressive-app-sdk": "~0.18.0",
-    "bluebird": "~2.9.24"
+    "babel-runtime": "^6.20.0",
+    "bluebird": "~2.9.24",
+    "mobify-progressive-app-sdk": "~0.18.0"
   },
   "devDependencies": {
+    "babel-plugin-syntax-async-functions": "^6.13.0",
+    "babel-plugin-transform-async-to-module-method": "^6.16.0",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "eslint": "^3.12.2",
+    "eslint-loader": "^1.6.1",
     "grunt": "^0.4.5",
     "grunt-cli": "^1.2.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-requirejs": "^0.4.2",
     "nightwatch": "0.8.18",
-    "nightwatch-commands": "1.5.0"
+    "nightwatch-commands": "1.5.0",
+    "webpack": "^2.1.0-beta.27"
   },
   "scripts": {
+    "build": "webpack --config webpack.app.config.js",
+    "deps": "./scripts/build-dependencies.sh ./app",
     "test": "./scripts/ios-appium.sh"
   },
   "license": "SEE LICENSE IN LICENSE"
