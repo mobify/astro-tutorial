@@ -1,4 +1,8 @@
-## To be released
+## v0.18.0
+- Update to Swift 3
+- Android changes to support Astro Android plugin refactor
+- JavaScript builds using WebPack
+- JavaScript changed to ES6
 
 ## v0.17.6
 - Dismiss launch screen when app is loaded
