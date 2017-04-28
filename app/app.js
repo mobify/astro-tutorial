@@ -18,7 +18,7 @@ window.run = function() {
 
     // Start the app by navigating to the base url
     mainNavigationPromise.then(function(mainNavigationView){
-        mainNavigationView.navigate(baseUrl);
+        mainNavigationView.navigateToUrl(baseUrl);
     });
 
     // Use the mainNavigationView as the main content view for our layout
