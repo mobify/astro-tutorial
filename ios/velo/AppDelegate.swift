@@ -13,7 +13,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var astroViewController: AstroViewController?
+    @objc var astroViewController: AstroViewController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // TODO: make it difficult for an Astro developer to delay return from this function.
