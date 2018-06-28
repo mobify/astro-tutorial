@@ -1,4 +1,5 @@
-## To be released:
+## v1.1.2:
+- Update Gradle version to 4.4
 
 ## v1.0.0
 - Upgrade to Swift 4
