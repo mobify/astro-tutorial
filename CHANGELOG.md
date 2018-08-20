@@ -1,4 +1,4 @@
-## v1.1.2:
+## v1.1.4:
 - Update Gradle version to 4.4
 
 ## v1.0.0
