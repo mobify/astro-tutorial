@@ -1,3 +1,6 @@
+## v1.1.4:
+- Update Gradle version to 4.4
+
 ## v1.0.0
 - Upgrade to Swift 4
 - Upgrade Gradle version to 4.1
