@@ -10,7 +10,7 @@ import Promise from 'bluebird';
 window.run = async function() {
 
     // Enter your site url here
-    const baseUrl = 'http://<Your IP Address>:5000/';
+    const baseUrl = 'http://<Your IP Address>:5000';
 
     // Initialize plugins
     const mainNavigationPromise = NavigationPlugin.init();
