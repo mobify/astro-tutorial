@@ -21,7 +21,7 @@ var config = {
         alias: {
             astro: path.resolve(rootDir, 'node_modules/mobify-progressive-app-sdk/js/src/'),
             vendor: path.resolve(rootDir, 'node_modules/mobify-progressive-app-sdk/js/vendor/'),
-            bluebird: path.resolve(rootDir, 'node_modules/mobify-progressive-app-sdk/node_modules/bluebird')
+            bluebird: path.resolve(rootDir, 'node_modules/bluebird')
         }
     },
     plugins: [
