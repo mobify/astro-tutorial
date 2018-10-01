@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
+    compileSdkVersion 27
 
     defaultConfig {
         applicationId "com.mobify.velo"
         minSdkVersion 19
-        targetSdkVersion 19
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         missingDimensionStrategy 'preview', 'previewDisabled'
@@ -20,12 +20,13 @@ android {
 }
 
 task buildJS(type:Exec) {
+    environment "NODE_ENV", "development"
     commandLine "../../app/build-js.sh"
 }
 
 preBuild.dependsOn buildJS
 
 dependencies {
-    implementation 'com.android.support:appcompat-v7:23.4.0'
+    implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation project(':astro')
 }

@@ -54,12 +54,7 @@ var config = {
     }
 };
 
-if (isProd) {
-    config.plugins = config.plugins.concat([
-        new webpack.optimize.UglifyJsPlugin(),
-        new webpack.optimize.OccurrenceOrderPlugin()
-    ]);
-} else {
+if (!isProd) {
     config.devtool = 'inline-source-maps';
 }
 
