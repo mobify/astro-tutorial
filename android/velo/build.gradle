@@ -20,6 +20,7 @@ android {
 }
 
 task buildJS(type:Exec) {
+    environment "NODE_ENV", "development"
     commandLine "../../app/build-js.sh"
 }
 
