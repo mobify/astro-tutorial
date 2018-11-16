@@ -1,5 +1,3 @@
-## To be released
-
 ## v3.0.0:
 - Update to Astro 3.0.0
 
