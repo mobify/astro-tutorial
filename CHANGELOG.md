@@ -1,5 +1,8 @@
 ## To be released
 
+## v3.0.0:
+- Update to Astro 3.0.0
+
 ## v2.0.0:
 - Update to Astro 2.0.0
 - Upgrade to use Webpack 4
