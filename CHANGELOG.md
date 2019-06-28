@@ -1,3 +1,7 @@
+## v3.0.0:
+- Update to Astro 3.0.0
+- Upgrade to support iOS 12 SDK and Swift 4.2
+
 ## v2.0.0:
 - Update to Astro 2.0.0
 - Upgrade to use Webpack 4
