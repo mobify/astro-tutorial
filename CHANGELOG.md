@@ -1,3 +1,6 @@
+## v3.1.1:
+- Update to Astro 3.1.1s
+
 ## v3.0.0:
 - Update to Astro 3.0.0
 - Upgrade to support iOS 12 SDK and Swift 4.2
